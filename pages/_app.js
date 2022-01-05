@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  console.log('session: ', session);
   return (
     <SessionProvider session={session}>
       <RecoilRoot>
