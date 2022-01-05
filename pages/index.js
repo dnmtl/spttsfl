@@ -19,14 +19,14 @@ export default function Home() {
   );
 }
 
-export const getServerSideProps = async (context) => {
-  console.log("context: ", context);
+export async function getServerSideProps(context) {
+  console.log("GETSERVERSIDEPROPS -> context: ", context);
   const session = await getSession(context);
-  console.log("session: ", session);
+  console.log("GETSERVERSIDEPROPS -> session: ", session);
 
   return {
     props: {
       session,
     },
   };
-};
+}
