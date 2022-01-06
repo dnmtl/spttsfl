@@ -1,9 +1,9 @@
-import { useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import Sidebar from "../components/Sidebar";
-import Center from "../components/Center";
+// import Sidebar from "../components/Sidebar";
+// import Center from "../components/Center";
 // import Player from "../components/Player";
 import Loader from "../components/Loader";
 import Dashboard from "../components/Dashboard";
@@ -48,4 +48,12 @@ export default function Home() {
       </div> */}
     </div>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  return {
+    props: {
+      session: await getSession(ctx),
+    },
+  };
 }
