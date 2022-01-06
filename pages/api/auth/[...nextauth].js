@@ -4,7 +4,7 @@ import SpotifyProvider from "next-auth/providers/spotify";
 import spotifyApi, { LOGIN_URL } from "../../../lib/spotify";
 
 async function refreshAccessToken(token) {
-  console.log('REFRESHACCESSTOKEN -> token: ', token);
+  console.log("REFRESHACCESSTOKEN -> token: ", token);
   try {
     spotifyApi.setAccessToken(token.accessToken);
     spotifyApi.setAccessToken(token.refreshToken);
@@ -29,11 +29,14 @@ async function refreshAccessToken(token) {
 }
 
 export default NextAuth({
+  // site: process.env.NEXTAUTH_URL,
   providers: [
     SpotifyProvider({
       clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
       authorization: LOGIN_URL,
+      // authorization:
+      //   "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private,playlist-read-collaborative,user-read-email,streaming,user-read-private,user-library-read,user-top-read,user-library-modify,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-follow-read,user-read-currently-playing",
     }),
   ],
   secret: process.env.JWT_SECRET,
@@ -47,6 +50,11 @@ export default NextAuth({
       console.log("NEXT AUTH -> user: ", user);
       if (account && user) {
         return {
+          // accessToken: account.access_token,
+          // accessTokenExpires: Date.now() + account.expires_in * 1000,
+          // refreshToken: account.refresh_token,
+          // user,
+
           ...token,
           accessToken: account.access_token,
           refreshToken: account.refresh_token,
@@ -60,7 +68,7 @@ export default NextAuth({
         return token;
       }
 
-      return await refreshAccessToken(token);
+      return refreshAccessToken(token);
     },
 
     async session({ session, token }) {
@@ -71,6 +79,11 @@ export default NextAuth({
       session.user.username = token.username;
 
       return session;
+      // session.user = token.user;
+      // session.accessToken = token.accessToken;
+      // session.error = token.error;
+
+      // return session;
     },
   },
 });

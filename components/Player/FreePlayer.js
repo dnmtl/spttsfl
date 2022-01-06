@@ -1,4 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
+import { useSession } from "next-auth/react";
+import { useRecoilState } from "recoil";
+import { debounce } from "lodash";
 import {
   SwitchHorizontalIcon,
   VolumeUpIcon as VolumeDownIcon,
@@ -11,15 +14,12 @@ import {
   ReplyIcon,
   VolumeUpIcon,
 } from "@heroicons/react/solid";
-import { useSession } from "next-auth/react";
-import { useRecoilState } from "recoil";
 
-import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
-import { useSongInfo } from "../hooks/useSongInfo";
-import { useSpotify } from "../hooks/useSpotify";
-import { debounce } from "lodash";
+import { currentTrackIdState, isPlayingState } from "../../atoms/songAtom";
+import { useSpotify } from "../../hooks/useSpotify";
+import { useSongInfo } from "../../hooks/useSongInfo";
 
-function Player() {
+function FreePlayer() {
   const spotifyApi = useSpotify();
   const { data: session, status } = useSession();
   const [currentTrackId, setCurrentTrackId] =
@@ -79,9 +79,9 @@ function Player() {
         <img
           className="hidden md:inline h-10 w-10"
           src={songInfo?.album.images?.[0]?.url}
-          alt=""
+          alt="song cover"
         />
-        <div>
+        <div className="text-xs">
           <h3>{songInfo?.name}</h3>
           <p>{songInfo?.artists?.[0]?.name}</p>
         </div>
@@ -123,4 +123,4 @@ function Player() {
   );
 }
 
-export default Player;
+export default FreePlayer;

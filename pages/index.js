@@ -1,18 +1,18 @@
-import { /* getSession,  */useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import Sidebar from "../components/Sidebar";
 import Center from "../components/Center";
-import Player from "../components/Player";
-import Head from "next/head";
+// import Player from "../components/Player";
+import Loader from "../components/Loader";
+import Dashboard from "../components/Dashboard";
 
 export default function Home() {
   const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
-    // if the user is not "authenticated" then redirect/route to "/auth/signin" page
     onUnauthenticated() {
-      // The user is not authenticated, handle it here.
       router.push("/auth/signin");
     },
   });
@@ -20,8 +20,12 @@ export default function Home() {
   console.log("HOME -> session: ", session);
   console.log("HOME -> status: ", status);
 
+  if (status === "loading") {
+    return <Loader />;
+  }
+
   return (
-    <>
+    <div>
       <Head>
         <title>Spotify - Dashboard</title>
         <link
@@ -30,7 +34,9 @@ export default function Home() {
         />
       </Head>
 
-      <div className="bg-black h-screen overflow-hidden">
+      <Dashboard />
+
+      {/* <div className="bg-black h-screen overflow-hidden">
         <main className="flex">
           <Sidebar />
           <Center />
@@ -39,19 +45,7 @@ export default function Home() {
         <div className="sticky bottom-0">
           <Player />
         </div>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   console.log("GETSERVERSIDEPROPS -> context: ", context);
-//   const session = await getSession(context);
-//   console.log("GETSERVERSIDEPROPS -> session: ", session);
-
-//   return {
-//     props: {
-//       session,
-//     },
-//   };
-// }

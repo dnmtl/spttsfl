@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { getProviders, signIn, useSession } from "next-auth/react";
 
+import Loader from "../../components/Loader";
+
 function Signin({ providers }) {
   const { data: session } = useSession();
   const router = useRouter();
@@ -14,8 +16,10 @@ function Signin({ providers }) {
     }
   }, [session]);
 
+  if (session) return <Loader />;
+
   return (
-    <div>
+    <div className="bg-black h-screen flex flex-col items-center pt-40 space-y-8">
       <Head>
         <title>Login - Spotify</title>
         <link
@@ -24,13 +28,13 @@ function Signin({ providers }) {
         />
       </Head>
 
-      {/* <Image
+      <Image
         src="https://rb.gy/y9mwtb"
         height={250}
         width={600}
         objectFit="contain"
         className="animate-pulse"
-      /> */}
+      />
 
       {Object.values(providers).map((provider) => {
         return (
