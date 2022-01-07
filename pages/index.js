@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="bg-black h-screen overflow-hidden">
       <Head>
         <title>Spotify - Dashboard</title>
         <link

@@ -12,6 +12,7 @@ import { useRecoilState } from "recoil";
 
 import { useSpotify } from "../hooks/useSpotify";
 import { playlistIdState } from "../atoms/playlistAtom";
+import Image from "next/image";
 
 function Sidebar() {
   const spotifyApi = useSpotify();
@@ -32,6 +33,15 @@ function Sidebar() {
   return (
     <div className="text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36">
       <div className="space-y-4">
+        <div className="flex justify-center">
+          <Image
+            src="https://rb.gy/xkacau"
+            width={42}
+            height={42}
+            objectFit="contain"
+          />
+        </div>
+
         <button className="flex items-center space-x-2 hover:text-white">
           <HomeIcon className="h-5 w-5" />
           <p>Home</p>
