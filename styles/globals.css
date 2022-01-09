@@ -6,12 +6,29 @@
   .button {
     @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
   }
-/* 
+  /* 
   .active {
     @apply max-h-64 h-full;
   } */
 
+  .blobby {
+    @apply absolute aspect-square rounded-full bg-white;
+  }
+
   .transition-base {
     @apply transition-all duration-700 ease-in-base;
   }
+}
+
+.bolby {
+  box-shadow: 120px 80px 40px 20px #0ff;
+}
+
+.glassmorph {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

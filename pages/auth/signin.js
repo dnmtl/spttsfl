@@ -19,7 +19,8 @@ function Signin({ providers }) {
   if (session) return <Loader />;
 
   return (
-    <div className="bg-black h-screen flex flex-col items-center pt-40 space-y-8">
+    <div className="flex flex-col items-center pb-10  space-y-8 mix-blend-color">
+    {/* <div className="h-screen flex flex-col items-center pt-40 space-y-8 mix-blend-color"> */}
       <Head>
         <title>Login - Spotify</title>
         <link

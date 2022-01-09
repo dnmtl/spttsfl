@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
-import clsx from "clsx";
 import { ChevronDownIcon, LogoutIcon } from "@heroicons/react/outline";
+import clsx from "clsx";
 
 const UserDropdown = () => {
   const { data: session } = useSession();

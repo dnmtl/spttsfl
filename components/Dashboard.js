@@ -8,6 +8,7 @@ import FreePlayer from "./Player/FreePlayer";
 import Sidebar from "./Sidebar";
 import UserDropdown from "./UserDropdown";
 import CurrentPlaylist from "./CurrentPlaylist";
+import Blobby from "./Blobby/Blobby";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -34,18 +35,20 @@ const Dashboard = () => {
   }, [accessToken]);
 
   return (
-    <main className="flex">
-    {/* <main className="flex min-h-screen min-w-max lg:pb-24"> */}
+    // <main className="flex relative min-h-screen min-w-max">
+    <>
+      {/* <Blobby /> */}
       <Sidebar />
-      <CurrentPlaylist />
+      {/* <CurrentPlaylist /> */}
       <UserDropdown />
 
-      {showPlayer && (
-        <div className="fixed bottom-0 left-0 right-0 z-50">
-          <FreePlayer accessToken={accessToken} trackUri={currentTrack} />
-        </div>
-      )}
-    </main>
+      {/* {showPlayer && (
+          <div className="fixed bottom-0 left-0 right-0 z-50">
+            <FreePlayer accessToken={accessToken} trackUri={currentTrack} />
+          </div>
+        )} */}
+    </>
+    // </main>
   );
 };
 
