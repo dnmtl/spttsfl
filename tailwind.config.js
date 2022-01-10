@@ -5,8 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "rich-black": "#020204",
+        "spotify": "#1db954",
+      },
       container: {
-        // center: true,
         padding: {
           DEFAULT: "1rem",
           sm: "2rem",
