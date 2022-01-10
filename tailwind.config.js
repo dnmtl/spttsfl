@@ -13,9 +13,10 @@ module.exports = {
         padding: {
           DEFAULT: "1rem",
           sm: "2rem",
+          md: '2.5rem',
           lg: "3rem",
-          xl: "4rem",
-          "2xl": "5rem",
+          xl: "3.5rem",
+          "2xl": "4rem",
         },
       },
       keyframes: {
