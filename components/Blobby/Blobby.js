@@ -3,7 +3,7 @@ const Blobby = () => (
     <div className="relative w-full h-full bg-spotify overflow-hidden">
       <main className="absolute inset-0 bg-rich-black mix-blend-multiply contrast-[30]">
         <div className="relative w-full h-full">
-          <div className="absolute left-0 top-0 translate-1/2 m-4 sm:mx-20 md:mx-14 lg:mx-16 tra 2xl:translate-x-[200%] w-1/6 sm:w-1/12 aspect-square bg-white rounded-full blur-[6px]">
+          <div className="absolute left-1/2 top-0 -translate-x-full m-4 sm:mx-20 md:mx-14 lg:mx-16 tra 2xl:translate-x-[200%] w-1/6 sm:w-1/12 aspect-square bg-white rounded-full blur-[6px]">
             <div className="blobby w-[110%] bg-transparent animate-spin-1 top-0 left-0">
               <span className="absolute w-3/5 aspect-square bg-white rounded-full" />
             </div>
@@ -26,7 +26,8 @@ const Blobby = () => (
         </div>
       </main>
     </div>
-    <div className="absolute right-0 bottom-0 -translate-1/2 w-1/6 m-1 md:m-4 2xl:-translate-x-2/3 rounded-full aspect-square bg-gradient-to-br from-spotify to-cyan-900" />
+    <div className="absolute right-0 bottom-0 -translate-1/2 w-1/3 m-1 md:m-4 2xl:-translate-x-1/3 rounded-full aspect-square bg-gradient-to-br from-spotify to-cyan-900" />
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 m-1 md:m-4 2xl:translate-x-1/2 rounded-full aspect-square bg-gradient-to-br from-ukranian-blue to-prussian-blue" />
   </>
 );
 

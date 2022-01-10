@@ -16,6 +16,16 @@
   }
 
   .bg-glassy {
-    @apply bg-white bg-opacity-10 backdrop-blur-[5.5px] border border-white border-opacity-[0.18] rounded-xl;
+    @apply bg-gradient-to-br from-glassy-40 to-glassy-10 backdrop-blur-[20px] rounded-3xl shadow-glassy shadow-glassy-dark-10;
   }
+
+  .border-gradient {
+    @apply before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:p-px before:bg-gradient-to-br before:from-ukranian-blue-50 before:via-glassy-0 before:to-spotify-50;
+  }
+}
+
+.border-gradient::before {
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }

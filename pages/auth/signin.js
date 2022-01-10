@@ -19,7 +19,7 @@ function Signin({ providers }) {
   if (session) return <Loader />;
 
   return (
-    <div className="flex flex-col items-center pb-10 space-y-8 mix-blend-color">
+    <div className="flex flex-col items-center pb-10 space-y-8">
       <Head>
         <title>Login - Spotify</title>
         <link
@@ -29,11 +29,11 @@ function Signin({ providers }) {
       </Head>
 
       <Image
+        className="animate-pulse mix-blend-color"
         src="https://rb.gy/y9mwtb"
         height={250}
         width={600}
         objectFit="contain"
-        className="animate-pulse"
       />
 
       {Object.values(providers).map((provider) => {

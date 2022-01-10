@@ -5,15 +5,36 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        3: "3px",
+      },
       colors: {
+        "prussian-blue": "#0b3954",
+        "ukranian-blue": {
+          DEFAULT: "#a3d9ff",
+          50: "#a3d9ff80",
+        },
         "rich-black": "#020204",
-        "spotify": "#1db954",
+        glassy: {
+          0: "#ffffff00",
+          10: "#ffffff1a",
+          40: "#ffffff66",
+          50: "#ffffff80",
+        },
+        "glassy-dark": {
+          10: "#0000001a",
+        },
+        spotify: {
+          DEFAULT: "#1db954",
+          10: "#1db9541a",
+          50: "#1db95480",
+        },
       },
       container: {
         padding: {
           DEFAULT: "1rem",
           sm: "2rem",
-          md: '2.5rem',
+          md: "2.5rem",
           lg: "3rem",
           xl: "3.5rem",
           "2xl": "4rem",
@@ -82,6 +103,10 @@ module.exports = {
       },
       backgroundImage: {
         "spoty-light-logo": "url(/spotify-logo.png)",
+        noise: "url(/svg/noise.svg)",
+      },
+      boxShadow: {
+        glassy: "0px 1px 24px -1px",
       },
     },
   },
