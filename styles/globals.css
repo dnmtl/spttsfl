@@ -20,7 +20,7 @@
   }
 
   .border-gradient {
-    @apply before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:p-px before:bg-gradient-to-br before:from-ukranian-blue-50 before:via-glassy-0 before:to-spotify-50;
+    @apply before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:p-[3px] before:bg-gradient-to-br before:from-ukranian-blue-50 before:via-glassy-0 before:to-spotify-50;
   }
 }
 
