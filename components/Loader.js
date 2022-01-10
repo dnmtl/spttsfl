@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { ThreeBounce } from "better-react-spinkit";
 
+import spotifyLogo from "../public/spotify-logo-full.png";
+
 function Loader() {
   return (
     <div className="h-screen">
       <div className="pt-40 flex flex-col items-center space-y-4">
-        <span className="relative w-[400px] h-[250px] lg:w-[550px] lg:h-[240px] mix-blend-color">
+        <span className="relative w-[400px] h-[250px] lg:w-[550px] lg:h-[240px]">
           <Image
-            src="https://rb.gy/y9mwtb"
+            src={spotifyLogo}
             layout="fill"
             objectFit="contain"
             className="animate-pulse"

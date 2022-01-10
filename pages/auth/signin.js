@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getProviders, signIn, useSession } from "next-auth/react";
+import spotifyLogo from "../../public/spotify-logo-full.png";
 
 import Loader from "../../components/Loader";
 
@@ -19,7 +20,7 @@ function Signin({ providers }) {
   if (session) return <Loader />;
 
   return (
-    <div className="flex flex-col items-center pb-10 space-y-8">
+    <div className="h-full flex flex-col items-center justify-center pb-10 space-y-8">
       <Head>
         <title>Login - Spotify</title>
         <link
@@ -29,11 +30,12 @@ function Signin({ providers }) {
       </Head>
 
       <Image
-        className="animate-pulse mix-blend-color"
-        src="https://rb.gy/y9mwtb"
+        className="animate-pulse"
+        src={spotifyLogo}
         height={250}
         width={600}
         objectFit="contain"
+        alt="spotify"
       />
 
       {Object.values(providers).map((provider) => {
