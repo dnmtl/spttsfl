@@ -20,7 +20,7 @@ function Signin({ providers }) {
   if (session) return <Loader />;
 
   return (
-    <div className="h-full flex flex-col items-center justify-center pb-10 space-y-8">
+    <div className="w-full h-full flex flex-col items-center justify-center space-y-8">
       <Head>
         <title>Login - Spotify</title>
         <link
@@ -42,9 +42,11 @@ function Signin({ providers }) {
         return (
           <div key={provider.name}>
             <button
-              className="text-white py-4 px-6 rounded-full bg-[#1db954] border border-transparent 
-                                            uppercase font-bold text-xs tracking-wider hover:bg-[#0db146] hover:scale-105 
-                                            transition duration-300 ease-out md:text-base"
+              className="button-glassy"
+              // className="bg-transparent border-y-0 p-4 rounded-full backdrop-blur-[5px] border-x-white border-opacity-30 border shadow-md shadow-glassy-dark-20 font-medium"
+              // className="text-white py-4 px-6 rounded-full bg-[#1db954] border border-transparent
+              // uppercase font-bold text-xs tracking-wider hover:bg-[#0db146] hover:scale-105
+              // transition duration-300 ease-out md:text-base"
               onClick={() => {
                 signIn(provider.id);
               }}

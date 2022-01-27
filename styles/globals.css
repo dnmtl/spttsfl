@@ -16,11 +16,17 @@
   }
 
   .bg-glassy {
-    @apply bg-gradient-to-br from-glassy-40 to-glassy-10 backdrop-blur-[20px] rounded-3xl shadow-glassy shadow-glassy-dark-10;
+    @apply bg-gradient-to-br from-glassy-20 to-glassy-0 backdrop-blur-[18px] rounded-3xl shadow-glassy shadow-glassy-dark-10;
+    /* @apply bg-gradient-to-br from-glassy-40 to-glassy-10 backdrop-blur-[20px] rounded-3xl shadow-glassy shadow-glassy-dark-10; */
   }
 
   .border-gradient {
-    @apply before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:p-[3px] before:bg-gradient-to-br before:from-ukranian-blue-50 before:via-glassy-0 before:to-spotify-50;
+    @apply before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:p-px before:bg-gradient-to-br before:from-ukranian-blue-50 before:via-glassy-0 before:to-spotify-50;
+  }
+
+  .button-glassy {
+    @apply text-white py-3 px-8 lowercase tracking-widest border border-glassy-dark-10 rounded-3xl backdrop-blur-[6px] transition-all ease-in duration-500 bg-glassy-dark-20;
+    /* @apply text-white py-3 px-8 lowercase rounded-3xl transition-all ease-in duration-500 bg-glassy-dark-20 backdrop-blur-sm; */
   }
 }
 
@@ -29,3 +35,9 @@
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
 }
+
+/* Spotify Logo Shadow */
+/* WebkitFilter: 'drop-shadow(5px 5px 5px #222)',
+filter: 'drop-shadow(5px 5px 5px #222)',
+mixBlendMode: 'overlay',
+opacity: '0.5' */

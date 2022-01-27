@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -5,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Major Mono Display", ...defaultTheme.fontFamily.sans],
+      },
       borderWidth: {
         3: "3px",
       },
@@ -18,11 +23,14 @@ module.exports = {
         glassy: {
           0: "#ffffff00",
           10: "#ffffff1a",
+          20: "#ffffff33",
+          25: "#ffffff40",
           40: "#ffffff66",
           50: "#ffffff80",
         },
         "glassy-dark": {
           10: "#0000001a",
+          20: "#00000033",
         },
         spotify: {
           DEFAULT: "#1db954",
