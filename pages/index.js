@@ -51,9 +51,27 @@ export default function Home() {
 }
 
 export async function getServerSideProps(ctx) {
+  const session = await getSession(ctx);
+  console.log("INDEX -> session: ", session);
+
+  // if (!session) {
+  //   return { props: { errorCode: 401, errorMessage: "Not Authorized" } };
+  // }
+
+  const currentUser = await fetch("https://api.spotify.com/v1/me", {
+    headers: {
+      Authorization: `Bearer ${session.user.accessToken}`,
+    },
+  }).then((res) => res.json());
+  console.log("INDEX -> currentUser: ", currentUser);
+  const isUserPremium = currentUser.product === "premium";
+
   return {
     props: {
-      session: await getSession(ctx),
+      session: {
+        ...session,
+        user: { ...session.user, isPremium: isUserPremium },
+      },
     },
   };
 }

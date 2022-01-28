@@ -18,6 +18,7 @@ const AppLayout = ({ children }) => {
             objectFit="cover"
             quality={100}
             alt="noise"
+            priority
           />
           {/* <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-[0.15]" /> */}
           <div className="relative w-full h-full">{children}</div>

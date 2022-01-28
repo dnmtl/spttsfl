@@ -3,9 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { getProviders, signIn, useSession } from "next-auth/react";
-import spotifyLogo from "../../public/spotify-logo-full.png";
 
 import Loader from "../../components/Loader";
+
+import spotifyLogo from "../../public/spotify-logo-full.png";
 
 function Signin({ providers }) {
   const { data: session } = useSession();

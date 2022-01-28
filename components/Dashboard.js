@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRecoilState } from "recoil";
 import SpotifyWebApi from "spotify-web-api-node";
 
 import { playingTrack } from "../atoms/track";
 import FreePlayer from "./Player/FreePlayer";
+import PremiumPlayer from "./Player/PremiumPlayer";
 import Sidebar from "./Sidebar";
 import UserDropdown from "./UserDropdown";
 import CurrentPlaylist from "./CurrentPlaylist";
-import Blobby from "./Blobby/Blobby";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -16,6 +16,7 @@ const spotifyApi = new SpotifyWebApi({
 
 const Dashboard = () => {
   const { data: session } = useSession();
+  console.log("DASHBOARD -> session: ", session);
   const { accessToken } = session;
 
   const [currentTrack, setCurrentTrack] = useRecoilState(playingTrack);
@@ -41,6 +42,14 @@ const Dashboard = () => {
       <Sidebar />
       {/* <CurrentPlaylist /> */}
       <UserDropdown />
+
+      <div className="fixed bottom-0 left-0 right-0 z-50">
+        {session.user.isPremium ? (
+          <PremiumPlayer accessToken={accessToken} trackUri={currentTrack} />
+        ) : (
+          <FreePlayer accessToken={accessToken} trackUri={currentTrack} />
+        )}
+      </div>
 
       {/* {showPlayer && (
           <div className="fixed bottom-0 left-0 right-0 z-50">
