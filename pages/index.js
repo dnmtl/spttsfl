@@ -5,7 +5,6 @@ import Head from "next/head";
 // import Sidebar from "../components/Sidebar";
 // import Center from "../components/Center";
 // import Player from "../components/Player";
-import Loader from "../components/Loader";
 import Dashboard from "../components/Dashboard";
 
 export default function Home() {
@@ -19,10 +18,6 @@ export default function Home() {
 
   console.log("HOME -> session: ", session);
   console.log("HOME -> status: ", status);
-
-  if (status === "loading") {
-    return <Loader />;
-  }
 
   return (
     <div className="w-full h-full">

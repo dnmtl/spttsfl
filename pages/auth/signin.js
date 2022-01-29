@@ -4,13 +4,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { getProviders, signIn, useSession } from "next-auth/react";
 
-import Loader from "../../components/Loader";
-
 import spotifyLogo from "../../public/spotify-logo-full.png";
 
 function Signin({ providers }) {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
+
+  console.log("SIGNIN -> status: ", status);
+  console.log("SIGNIN -> session: ", session);
 
   useEffect(() => {
     if (session) {
@@ -18,10 +19,8 @@ function Signin({ providers }) {
     }
   }, [session]);
 
-  if (session) return <Loader />;
-
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center space-y-8">
+    <div className="w-full h-full flex flex-col items-center justify-center space-y-8 px-6">
       <Head>
         <title>Login - Spotify</title>
         <link
@@ -44,10 +43,6 @@ function Signin({ providers }) {
           <div key={provider.name}>
             <button
               className="button-glassy"
-              // className="bg-transparent border-y-0 p-4 rounded-full backdrop-blur-[5px] border-x-white border-opacity-30 border shadow-md shadow-glassy-dark-20 font-medium"
-              // className="text-white py-4 px-6 rounded-full bg-[#1db954] border border-transparent
-              // uppercase font-bold text-xs tracking-wider hover:bg-[#0db146] hover:scale-105
-              // transition duration-300 ease-out md:text-base"
               onClick={() => {
                 signIn(provider.id);
               }}
@@ -65,8 +60,6 @@ export default Signin;
 
 export async function getServerSideProps() {
   const providers = await getProviders();
-
-  console.log("SIGNIN -> providers: ", providers);
 
   return {
     props: { providers },

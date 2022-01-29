@@ -1,10 +1,17 @@
+import { useMemo } from "react";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 import Blobby from "../../Blobby/Blobby";
 
 import noisyBackground from "../../../public/svg/noise.svg";
+import LoadingContainer from "../../common/LoadingContainer/LoadingContainer";
 
 const AppLayout = ({ children }) => {
+  const { status } = useSession();
+
+  const isLoading = useMemo(() => status === "loading", [status]);
+
   return (
     <div className="max-h-screen h-screen flex justify-center items-center bg-rich-black overflow-hidden lowercase text-white">
       <Blobby />
@@ -20,9 +27,9 @@ const AppLayout = ({ children }) => {
             alt="noise"
             priority
           />
-          {/* <div className="absolute inset-0 bg-noise mix-blend-overlay opacity-[0.15]" /> */}
-          <div className="relative w-full h-full">{children}</div>
-          {/* <div className="relative w-full h-full text-white mix-blend-overlay opacity-50">{children}</div> */}
+          <div className="relative w-full h-full">
+            <LoadingContainer loading={isLoading}>{children}</LoadingContainer>
+          </div>
         </div>
       </div>
     </div>

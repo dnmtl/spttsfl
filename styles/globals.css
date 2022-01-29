@@ -17,7 +17,6 @@
 
   .bg-glassy {
     @apply bg-gradient-to-br from-glassy-20 to-glassy-0 backdrop-blur-[18px] rounded-3xl shadow-glassy shadow-glassy-dark-10;
-    /* @apply bg-gradient-to-br from-glassy-40 to-glassy-10 backdrop-blur-[20px] rounded-3xl shadow-glassy shadow-glassy-dark-10; */
   }
 
   .border-gradient {
@@ -25,9 +24,7 @@
   }
 
   .button-glassy {
-    @apply text-glassy-25 hover:text-glassy-70 font-medium py-3 px-8 duration-500 relative before:absolute before:inset-0 before:content-[''] before:rounded-3xl before:bg-glassy-5 before:blur-md before:hover:blur-sm before:duration-300 before:ease-in;
-    /* @apply text-glassy-50 font-medium py-3 px-8 border border-glassy-5 bg-glassy-5 rounded-3xl duration-500 hover:text-glassy-90 hover:bg-glassy-20 relative before:absolute before:inset-0 before:content-[''] before:blur-sm; */
-    /* @apply text-glassy-25 py-3 px-8 before:rounded-3xl bg-transparent relative before:absolute before:inset-0 before:content-[''] before:blur-sm before:shadow-neumorphic before:hover:shadow-neumorphicHover before:hover:scale-x-105 before:duration-300 before:ease-in; */
+    @apply text-glassy-25 hover:text-glassy-70 font-medium py-3 px-8 duration-500 relative before:absolute before:inset-0 before:content-[''] before:rounded-3xl before:bg-glassy-5 before:blur-sm before:hover:blur-none before:hover:border before:border-transparent before:hover:border-glassy-5 before:duration-300 before:ease-in;
   }
 }
 
