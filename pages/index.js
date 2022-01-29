@@ -1,5 +1,4 @@
-import { getSession, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 
 // import Sidebar from "../components/Sidebar";
@@ -8,17 +7,6 @@ import Head from "next/head";
 import Dashboard from "../components/Dashboard";
 
 export default function Home() {
-  const router = useRouter();
-  const { data: session, status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push("/auth/signin");
-    },
-  });
-
-  console.log("HOME -> session: ", session);
-  console.log("HOME -> status: ", status);
-
   return (
     <div className="w-full h-full">
       <Head>
@@ -47,18 +35,13 @@ export default function Home() {
 
 export async function getServerSideProps(ctx) {
   const session = await getSession(ctx);
-  console.log("INDEX -> session: ", session);
-
-  // if (!session) {
-  //   return { props: { errorCode: 401, errorMessage: "Not Authorized" } };
-  // }
 
   const currentUser = await fetch("https://api.spotify.com/v1/me", {
     headers: {
       Authorization: `Bearer ${session.user.accessToken}`,
     },
   }).then((res) => res.json());
-  console.log("INDEX -> currentUser: ", currentUser);
+
   const isUserPremium = currentUser.product === "premium";
 
   return {
