@@ -25,8 +25,9 @@
   }
 
   .button-glassy {
-    @apply text-white py-3 px-8 lowercase tracking-widest border border-glassy-dark-10 rounded-3xl backdrop-blur-[6px] transition-all ease-in duration-500 bg-glassy-dark-20;
-    /* @apply text-white py-3 px-8 lowercase rounded-3xl transition-all ease-in duration-500 bg-glassy-dark-20 backdrop-blur-sm; */
+    @apply text-glassy-25 hover:text-glassy-70 font-medium py-3 px-8 duration-500 relative before:absolute before:inset-0 before:content-[''] before:rounded-3xl before:bg-glassy-5 before:blur-md before:hover:blur-sm before:duration-300 before:ease-in;
+    /* @apply text-glassy-50 font-medium py-3 px-8 border border-glassy-5 bg-glassy-5 rounded-3xl duration-500 hover:text-glassy-90 hover:bg-glassy-20 relative before:absolute before:inset-0 before:content-[''] before:blur-sm; */
+    /* @apply text-glassy-25 py-3 px-8 before:rounded-3xl bg-transparent relative before:absolute before:inset-0 before:content-[''] before:blur-sm before:shadow-neumorphic before:hover:shadow-neumorphicHover before:hover:scale-x-105 before:duration-300 before:ease-in; */
   }
 }
 

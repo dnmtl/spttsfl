@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Major Mono Display", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        // sans: ["Major Mono Display", ...defaultTheme.fontFamily.sans],
       },
       borderWidth: {
         3: "3px",
@@ -22,15 +23,19 @@ module.exports = {
         "rich-black": "#020204",
         glassy: {
           0: "#ffffff00",
+          5: "#ffffff0d",
           10: "#ffffff1a",
           20: "#ffffff33",
           25: "#ffffff40",
           40: "#ffffff66",
           50: "#ffffff80",
+          70: "#ffffffb3",
+          90: "#ffffffe6",
         },
         "glassy-dark": {
           10: "#0000001a",
           20: "#00000033",
+          80: "#000000cc",
         },
         spotify: {
           DEFAULT: "#1db954",
@@ -115,6 +120,10 @@ module.exports = {
       },
       boxShadow: {
         glassy: "0px 1px 24px -1px",
+        neumorphic:
+          "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(90 90 90 / 40%);",
+        neumorphicHover:
+          "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(255 255 255 / 20%), inset 8px 8px 20px rgb(0 0 0), inset -8px -8px 20px rgb(255 255 255 / 20%)",
       },
     },
   },
