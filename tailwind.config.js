@@ -11,6 +11,9 @@ module.exports = {
         sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
         // sans: ["Major Mono Display", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        "14xl": "12rem",
+      },
       borderWidth: {
         3: "3px",
       },
