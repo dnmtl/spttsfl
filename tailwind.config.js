@@ -114,12 +114,11 @@ module.exports = {
             transform: "translateX(20px)",
             transform: "translateY(30px)",
           },
-          "40%": { transform: "translateX(30px)" },
+          "40%": { transform: "translateX(30px) scale(0.95)" },
           "60%": {
-            transform: "translateX(-30px)",
-            transform: "translateY(-20px)",
+            transform: "translate(-30px, -20px) scale(0.85)",
           },
-          "80%": { transform: "translateX(15px)" },
+          "80%": { transform: "translateX(15px) scale(0.95)" },
         },
         "movement-2": {
           "0%, 100%": {
