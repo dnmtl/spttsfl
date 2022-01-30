@@ -32,6 +32,7 @@ module.exports = {
           25: "#ffffff40",
           40: "#ffffff66",
           50: "#ffffff80",
+          60: "#ffffff99",
           70: "#ffffffb3",
           90: "#ffffffe6",
         },
@@ -152,11 +153,13 @@ module.exports = {
       backgroundImage: {
         "spoty-light-logo": "url(/spotify-logo.png)",
         noise: "url(/svg/noise.svg)",
+        fade: "linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(0,0,0,1) 40%, rgba(255,255,255,0) 100%)",
       },
       boxShadow: {
         glassy: "0px 1px 24px -1px",
         sphere:
           "inset -25px -15px 40px rgb(0 0 0 / 60%), inset 25px 15px 40px rgb(255 255 255 / 35%)",
+        fade: "0px -10px 20px 20px rgb(0 0 0), inset 0px -20px 20px 0px rgb(0 0 0)",
         neumorphic:
           "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(90 90 90 / 40%)",
         neumorphicHover:

@@ -13,7 +13,7 @@ const AppLayout = ({ children }) => {
   const isLoading = useMemo(() => status === "loading", [status]);
 
   return (
-    <div className="max-h-screen h-screen flex justify-center items-center bg-rich-black overflow-hidden lowercase text-white">
+    <div className="max-h-screen h-screen relative flex justify-center items-center bg-rich-black overflow-hidden lowercase text-white">
       <Blobby />
 
       <div className="max-h-screen h-screen absolute flex container overflow-hidden">

@@ -24,7 +24,7 @@
   }
 
   .button-glassy {
-    @apply text-glassy-25 hover:text-glassy-70 uppercase py-3 px-8 duration-500 relative before:absolute before:inset-0 before:content-[''] before:rounded-3xl before:bg-glassy-5 before:blur-sm before:hover:blur-none before:hover:border before:border-transparent before:hover:border-glassy-5 before:duration-300 before:ease-in;
+    @apply text-glassy-25 hover:text-glassy-70 uppercase py-3 px-8 duration-500 relative before:absolute before:inset-0 before:content-[''] before:rounded-3xl before:bg-glassy-5 before:blur-sm before:hover:blur-none before:hover:border before:border-transparent before:hover:border-glassy-5 before:duration-300 before:ease-in cursor-pointer;
   }
 }
 
