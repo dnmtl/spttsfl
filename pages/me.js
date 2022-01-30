@@ -4,9 +4,10 @@ import {
   ArrowLeftIcon,
   BadgeCheckIcon,
 } from "@heroicons/react/outline";
+import Link from "next/link";
+import Image from "next/image";
 
 import useUserInfo from "../hooks/useUserInfo";
-import Link from "next/link";
 
 const MePage = () => {
   const { profile, error, isLoading } = useUserInfo();
@@ -21,10 +22,14 @@ const MePage = () => {
         <title>{profile.display_name} Profile - Spotify</title>
       </Head>
 
-      <img
-        className="w-auto md:w-80 h-full md:h-80 md:m-auto md:rounded-full md:absolute md:top-1/3 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 object-cover opacity-70"
-        src={profile.images[0].url}
-      />
+      <div className="w-auto md:w-80 h-full md:h-80 md:m-auto md:rounded-full md:absolute md:top-1/3 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 opacity-70">
+        <Image
+          className="md:rounded-full"
+          src={profile.images[0].url}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
 
       <div className="absolute inset-0">
         <Link href={"/"}>
