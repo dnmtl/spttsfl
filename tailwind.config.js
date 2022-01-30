@@ -105,6 +105,37 @@ module.exports = {
             transform: "rotate(570deg)",
           },
         },
+        "movement-1": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+            transform: "translateY(0)",
+          },
+          "20%": {
+            transform: "translateX(20px)",
+            transform: "translateY(30px)",
+          },
+          "40%": { transform: "translateX(30px)" },
+          "60%": {
+            transform: "translateX(-30px)",
+            transform: "translateY(-20px)",
+          },
+          "80%": { transform: "translateX(15px)" },
+        },
+        "movement-2": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+            transform: "translateY(0)",
+          },
+          "25%": {
+            transform: "translateX(15px)",
+            transform: "translateY(-15px)",
+          },
+          "50%": { transform: "translateX(30px)" },
+          "75%": {
+            transform: "translateX(-15px)",
+            transform: "translateY(15px)",
+          },
+        },
       },
       transitionTimingFunction: {
         "in-base": "cubic-bezier(0.2, 1, 0.25, 1)",
@@ -116,6 +147,8 @@ module.exports = {
         "spin-4": "spin-4 6s ease-in-out infinite",
         "spin-5": "spin-5 12s ease-in-out infinite",
         "spin-6": "spin-6 10s ease-in-out infinite",
+        "movement-1": "movement-1 15s ease 0s infinite normal forwards",
+        "movement-2": "movement-2 15s ease 0s infinite normal forwards",
       },
       backgroundImage: {
         "spoty-light-logo": "url(/spotify-logo.png)",
@@ -123,8 +156,10 @@ module.exports = {
       },
       boxShadow: {
         glassy: "0px 1px 24px -1px",
+        sphere:
+          "inset -25px -15px 40px rgb(0 0 0 / 60%), inset 25px 15px 40px rgb(255 255 255 / 35%)",
         neumorphic:
-          "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(90 90 90 / 40%);",
+          "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(90 90 90 / 40%)",
         neumorphicHover:
           "8px 8px 20px rgb(0 0 0 / 50%), -8px -8px 20px rgb(255 255 255 / 20%), inset 8px 8px 20px rgb(0 0 0), inset -8px -8px 20px rgb(255 255 255 / 20%)",
       },

@@ -26,8 +26,8 @@ const Blobby = () => (
         </div>
       </main>
     </div>
-    <div className="absolute right-0 bottom-0 -translate-1/2 w-1/3 m-1 md:m-4 2xl:-translate-x-1/3 rounded-full aspect-square bg-gradient-to-br from-spotify to-cyan-900" />
-    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 m-1 md:m-4 2xl:translate-x-1/2 rounded-full aspect-square bg-gradient-to-br from-ukranian-blue to-prussian-blue" />
+    <div className="absolute right-0 bottom-0 -translate-1/2 w-1/3 m-1 md:m-4 2xl:-translate-x-1/3 rounded-full aspect-square bg-gradient-to-br from-spotify to-cyan-900 shadow-sphere animate-movement-1" />
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 m-1 md:m-4 2xl:translate-x-1/2 rounded-full aspect-square bg-gradient-to-br from-ukranian-blue to-prussian-blue shadow-sphere animate-movement-2" />
   </>
 );
 
