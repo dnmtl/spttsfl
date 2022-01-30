@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 
 import Blobby from "../../Blobby/Blobby";
+import LoadingContainer from "../../common/LoadingContainer/LoadingContainer";
 
 import noisyBackground from "../../../public/svg/noise.svg";
-import LoadingContainer from "../../common/LoadingContainer/LoadingContainer";
 
 const AppLayout = ({ children }) => {
   const { status } = useSession();
