@@ -22,12 +22,13 @@ const MePage = () => {
         <title>{profile.display_name} Profile - Spotify</title>
       </Head>
 
-      <div className="relative w-auto md:w-80 h-full md:h-80 md:m-auto md:rounded-full md:flex md:justify-center md:items-center opacity-70">
+      <div className="relative w-auto md:w-1/6 h-full md:h-auto md:m-auto md:aspect-square md:absolute md:top-1/3 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 object-cover opacity-70">
         <Image
           className="md:rounded-full"
           src={profile.images[0].url}
           layout="fill"
           objectFit="cover"
+          alt="me"
         />
       </div>
 
