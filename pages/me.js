@@ -10,7 +10,7 @@ import Image from "next/image";
 import useUserInfo from "../hooks/useUserInfo";
 
 const MePage = () => {
-  const { profile, error, isLoading } = useUserInfo();
+  const { profile, isLoading } = useUserInfo();
 
   if (isLoading) {
     return null;
@@ -19,7 +19,7 @@ const MePage = () => {
   return (
     <div className="w-full h-full md:flex md:items-center md:flex-col md:justify-evenly overflow-auto">
       <Head>
-        <title>{profile.display_name} Profile - Spotify</title>
+        <title>Spotify - {profile.display_name}</title>
       </Head>
 
       <Link href={"/"}>

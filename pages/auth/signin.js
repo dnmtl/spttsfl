@@ -1,24 +1,10 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { getProviders, signIn, useSession } from "next-auth/react";
+import { getProviders, signIn } from "next-auth/react";
 
 import spotifyLogo from "../../public/spotify-logo-full.png";
 
 function Signin({ providers }) {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-
-  console.log("SIGNIN -> status: ", status);
-  console.log("SIGNIN -> session: ", session);
-
-  useEffect(() => {
-    if (session) {
-      router.push("/");
-    }
-  }, [session]);
-
   return (
     <div className="w-full h-full flex flex-col items-center justify-center space-y-8 px-6">
       <Head>
