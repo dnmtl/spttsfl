@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-import useUserInfo from "../hooks/useUserInfo";
+import { useUserInfo } from "../hooks/useUserInfo";
 
 const MePage = () => {
   const { profile, isLoading } = useUserInfo();
@@ -22,12 +22,6 @@ const MePage = () => {
         <title>Spotify - {profile.display_name}</title>
       </Head>
 
-      <Link href={"/"}>
-        <div className="absolute top-5 left-5 button-glassy rounded-full p-2">
-          <ArrowLeftIcon className="w-5 h-5" />
-        </div>
-      </Link>
-
       <div className="relative w-full md:w-auto h-full md:h-full md:max-h-56 lg:max-h-80 md:aspect-square">
         <Image
           className="md:rounded-full"
@@ -38,6 +32,13 @@ const MePage = () => {
           quality={100}
         />
       </div>
+
+      <Link href={"/"}>
+        <div className="absolute top-5 left-5 button-glassy rounded-full p-2">
+          <ArrowLeftIcon className="w-5 h-5" />
+        </div>
+      </Link>
+
       <div className="absolute md:relative inset-x-0 bottom-0 bg-gradient-to-b from-transparent to-black md:bg-none px-4">
         <div className="flex md:justify-center items-center space-x-2 text-glassy-60">
           <LocationMarkerIcon className="w-5 h-5" />

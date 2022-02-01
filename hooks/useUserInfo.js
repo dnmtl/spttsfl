@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { useSpotify } from "./useSpotify";
 
-const useUserInfo = () => {
+export const useUserInfo = () => {
   const spotifyApi = useSpotify();
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
@@ -35,5 +35,3 @@ const useUserInfo = () => {
 
   return { profile, error, isLoading };
 };
-
-export default useUserInfo;
