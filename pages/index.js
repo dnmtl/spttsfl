@@ -36,6 +36,8 @@ export default function Home() {
 export async function getServerSideProps(ctx) {
   const session = await getSession(ctx);
 
+  console.log('session: ', session);
+
   const currentUser = await fetch("https://api.spotify.com/v1/me", {
     headers: {
       Authorization: `Bearer ${session.user.accessToken}`,

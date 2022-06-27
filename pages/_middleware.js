@@ -19,11 +19,13 @@ export async function middleware(req) {
   ) {
     return NextResponse.next();
   } else if (!token && !pathname.includes("/auth")) {
-    return NextResponse.redirect("/auth/signin");
+    url.pathname = "/auth/signin";
+    return NextResponse.redirect(url);
   }
 
   if (token && pathname === "/auth/signin") {
-    return NextResponse.redirect("/");
+    url.pathname = "/";
+    return NextResponse.redirect(url);
   } else {
     return NextResponse.next();
   }
