@@ -74,14 +74,16 @@ const Dashboard = () => {
 
             <Link href={"/me"}>
               <div className="w-full h-auto aspect-square cursor-pointer p-1">
-                <Image
-                  className="rounded-full"
-                  src={profile.images[0].url}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="cover"
-                />
+                {profile.images.length > 0 && (
+                  <Image
+                    className="rounded-full"
+                    src={profile.images?.[0]?.url}
+                    width="100%"
+                    height="100%"
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                )}
               </div>
             </Link>
             <div className="mx-3 my-1">

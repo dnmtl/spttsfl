@@ -23,14 +23,16 @@ const MePage = () => {
       </Head>
 
       <div className="relative w-full md:w-auto h-full md:h-full md:max-h-56 lg:max-h-80 md:aspect-square">
-        <Image
-          className="md:rounded-full"
-          src={profile.images[0].url}
-          layout="fill"
-          objectFit="cover"
-          alt="me"
-          quality={100}
-        />
+        {profile.images.length > 0 && (
+          <Image
+            className="md:rounded-full"
+            src={profile.images?.[0]?.url}
+            layout="fill"
+            objectFit="cover"
+            alt="me"
+            quality={100}
+          />
+        )}
       </div>
 
       <Link href={"/"}>
