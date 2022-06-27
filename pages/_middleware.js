@@ -10,7 +10,8 @@ export async function middleware(req) {
       !!process.env.VERCEL_URL,
   });
 
-  const { pathname } = req.nextUrl;
+  const url = req.nextUrl.clone();
+  const { pathname } = url;
 
   if (
     !token &&
